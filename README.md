@@ -15,14 +15,10 @@ Este repositório contém um minigame desenvolvido em Python para fins de estudo
 ## 📦 Como Rodar o Projeto  
 1. Clone este repositório: 
    ```bash  
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git  
-   ```  
-2. Acesse o diretório do projeto:  
+   git clone https://github.com/kaiquesiqueirx/minigame
+   ```    
+2. Execute o jogo:  
    ```bash  
-   cd nome-do-repositorio  
-     
-3. Execute o jogo:  
-   ```bash  
-   python minigame.py  
+   python main.py  
 
 > criado por Kaique Siqueira  
