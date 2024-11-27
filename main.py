@@ -48,8 +48,6 @@ style.theme_use('clam')
 app_nome = Label(frame_top, text='GUESS THE NUMBER', anchor='center', font=('tahoma 25 bold'), bg=co9, fg=co2) # FG (foreground) define cor do texto
 app_nome.place(x=215, y=7) # posicao do titulo
 
-global tentativas
-global pontuacao  
 
 
 
@@ -83,7 +81,7 @@ def iniciar_jogo():
                 tentativas += 2
                 pontuacao += 10
                 l_tentativas['text']=str(tentativas) + 'TRIES'
-                l_pontos='SCORE'+ str(pontuacao) 
+                l_pontos['text']='SCORE'+ str(pontuacao) 
 
             else:
                 tentativas -= 1
@@ -113,6 +111,7 @@ def iniciar_jogo():
                     b_8['text'] = ''
 
                     # chamar a funcao gameover
+                    game_over()
 
                 else:
                     pass
@@ -138,6 +137,25 @@ def iniciar_jogo():
     b_8.place(x=480, y=100)
 
 
+def game_over():
+    global tentativas
+    global pontuacao 
+
+    l_pontos = Label(frame_corpo, text='You scored : ' + str(pontuacao) + ' points', relief='raised', anchor='center', font=('Ivy 16 bold'), bg=co1, fg=co2) 
+    l_pontos.place(x=350, y=390)
+
+    tentativas=5
+    pontuacao=0
+
+    l_tentativas['text']=str(tentativas) + 'TRIES'
+    l_pontos['text']='SCORE'+ str(pontuacao) 
+
+    l_pontos = Label(frame_corpo, text='GAME OVER', relief='raised', anchor='center', font=('Ivy 16 bold'), bg=co1, fg=co2) 
+    l_pontos.place(x=325, y=460)
+
+
+    b_jogar = Button(frame_corpo, command=iniciar_jogo, text= 'PLAY', width=50, font=('Ivy 15 bold'), bg=co2, fg=co0, relief=RAISED, overrelief=RIDGE)
+    b_jogar.place(x=140, y=210)
 
 
 # configuraçoes do frame de baixo
