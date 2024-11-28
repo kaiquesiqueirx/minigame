@@ -49,9 +49,11 @@ app_nome = Label(frame_top, text='GUESS THE NUMBER', anchor='center', font=('tah
 app_nome.place(x=215, y=7) # posicao do titulo
 
 
-
-
 # funcao iniciar o jogo
+
+global tentativas
+global pontuacao 
+
 
 tentativas = 5 
 pontuacao = 0
@@ -111,6 +113,8 @@ def iniciar_jogo():
                     b_8['text'] = ''
 
                     # chamar a funcao gameover
+                    
+                    print(pontuacao)
                     game_over()
 
                 else:
@@ -138,11 +142,14 @@ def iniciar_jogo():
 
 
 def game_over():
+
+    
     global tentativas
     global pontuacao 
 
-    l_pontos = Label(frame_corpo, text='You scored : ' + str(pontuacao) + ' points', relief='raised', anchor='center', font=('Ivy 16 bold'), bg=co1, fg=co2) 
-    l_pontos.place(x=350, y=390)
+
+    l_pontuacao = Label(frame_corpo, text='You scored : ' + str(pontuacao) + ' points', relief='raised', anchor='center', font=('Ivy 16 bold'), bg=co1, fg=co2) 
+    l_pontuacao.place(x=270, y=390)
 
     tentativas=5
     pontuacao=0
